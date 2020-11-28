@@ -1,5 +1,5 @@
 resource "aws_lb" "example" {
-  name               = "eks-example"
+  name               = "eks-example-staging"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.lb_example.id]
@@ -11,7 +11,7 @@ resource "aws_lb_listener" "example" {
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = aws_acm_certificate.example.arn
+  certificate_arn   = data.aws_acm_certificate.example.arn
 
   default_action {
     type             = "forward"
@@ -20,7 +20,7 @@ resource "aws_lb_listener" "example" {
 }
 
 resource "aws_lb_target_group" "example" {
-  name     = "eks-example"
+  name     = "eks-example-staging"
   port     = 30001
   protocol = "HTTP"
   vpc_id   = module.vpc.vpc_id
