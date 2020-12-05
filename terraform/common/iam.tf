@@ -87,3 +87,16 @@ resource "aws_iam_user_group_membership" "develop" {
     aws_iam_group.eks_develop_group.name,
   ]
 }
+
+resource "aws_iam_user" "velero" {
+  name = "velero"
+}
+
+resource "aws_iam_user_policy" "velero_policy" {
+  name = "velero_policy"
+  user = aws_iam_user.velero.name
+
+  policy = templatefile("./iam/velero-policy.json", {
+    bucket = aws_s3_bucket.eks_backup.bucket
+  })
+}
