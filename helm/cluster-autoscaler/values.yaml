@@ -3,7 +3,6 @@ awsRegion: ap-northeast-1
 
 autoDiscovery:
   clusterName: eks-example
-  enabled: true
 
 image:
   tag: v1.18.3
