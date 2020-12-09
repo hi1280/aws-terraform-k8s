@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: front-end
-        image: weaveworksdemos/front-end
+        image: 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com/front-end
         ports:
         - containerPort: 8079
         securityContext:
