@@ -3,8 +3,8 @@ resource "aws_cloudwatch_metric_alarm" "front_end_elb_5XX_count" {
   alarm_name        = "front-end-elb-5XX-count"
   alarm_description = "front-endのALBからの5XXサーバエラーの数"
 
-  alarm_actions = ["arn:aws:sns:ap-northeast-1:012345678901:xxxxxxxxxx"] # 変更箇所
-  ok_actions    = ["arn:aws:sns:ap-northeast-1:012345678901:xxxxxxxxxx"] # 変更箇所
+  alarm_actions = ["arn:aws:sns:ap-northeast-1:123456789012:slack"] # 変更箇所
+  ok_actions    = ["arn:aws:sns:ap-northeast-1:123456789012:slack"] # 変更箇所
 
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1
