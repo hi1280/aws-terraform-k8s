@@ -42,11 +42,6 @@ resource "aws_iam_role_policy_attachment" "ec2_container_registry_readonly" {
   role       = aws_iam_role.eks_node_role.name
 }
 
-resource "aws_iam_role_policy_attachment" "cloudwatch_agent_server_policy" {
-  policy_arn = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
-  role       = aws_iam_role.eks_node_role.name
-}
-
 resource "aws_iam_policy" "container_build" {
   name   = "container-build"
   path   = "/service-role/"

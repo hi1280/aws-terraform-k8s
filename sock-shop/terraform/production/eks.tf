@@ -13,7 +13,7 @@ module "eks" {
       max_capacity            = 2
       min_capacity            = 2
       launch_template_id      = aws_launch_template.eks_example.id
-      launch_template_version = "$Latest"
+      launch_template_version = aws_launch_template.eks_example.latest_version
       iam_role_arn            = aws_iam_role.eks_node_role.arn
     }
   }
