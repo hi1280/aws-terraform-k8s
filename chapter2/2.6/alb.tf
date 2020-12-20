@@ -11,7 +11,7 @@ resource "aws_lb_listener" "example" {
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = data.aws_acm_certificate.example.arn
+  certificate_arn   = aws_acm_certificate.example.arn
 
   default_action {
     type             = "forward"
