@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/hi1280/aws-terraform-k8s
+    repoURL: https://github.com/hi1280/aws-terraform-k8s # 変更箇所
     targetRevision: HEAD
-    path: sock-shop/kubernetes/user/front-end/overlays/production
+    path: sock-shop/kubernetes/user/front-end/overlays/production # 変更箇所
   destination:
     server: https://kubernetes.default.svc
     namespace: sock-shop
